@@ -24,6 +24,11 @@ public class EmployeeDataService {
 		return employeeDataRepository.findByMobileNumber(phoneNo);
 	}
 	
+	public String saveEmployeeInfo(EmployeeInfo info) {
+		info =employeeDataRepository.saveAndFlush(info);
+		return "Data Inserted Sucesfully with id: "+info.getId();
+	}
+	
 	
 
 }
